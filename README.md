@@ -31,7 +31,7 @@ const keyword = 'skincare';
 
 Lalu jalankan:
 ```bash
-node index.js
+node app.js
 ```
 
 ## Output
