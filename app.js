@@ -1,7 +1,12 @@
 import { scrapeAds } from "./src/scraper.js";
 
-const keyword = 'cod';
+const keyword = 'COD';
 console.log(`Searching ads for: ${keyword}`);
+
+process.on('SIGINT', () => {
+    console.log('\nDihentikan! Memproses data yang sudah terkumpul...');
+    process.exit(0);
+});
 
 const ads = await scrapeAds(keyword);
 const filtered = ads.filter(ad => ad.count >= 15);
